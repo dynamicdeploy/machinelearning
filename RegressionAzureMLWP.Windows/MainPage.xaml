@@ -1,0 +1,121 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="RegressionAzureMLWP.MainPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RegressionAzureMLWP"
+    xmlns:common="using:RegressionAzureMLWP.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">My Application</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Background="White">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="Back"
+                        AutomationProperties.AutomationId="BackButton"
+                        AutomationProperties.ItemType="Navigation Button"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                
+                <TextBlock x:Name="pageTitle" Text="Predict" Foreground="#FF1D3DF7" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Center" FontSize="72"/>
+
+                <TextBlock x:Name="TxtPrice" Text=""
+                 Margin="50,20,0,0"
+                 Style="{StaticResource HeaderTextBlockStyle}"
+                 Foreground="#FF1D3DF7" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Right" />
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1"
+          x:Name="ContentRoot" HorizontalAlignment="Center"
+         >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="CbMake" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Width="320" FontSize="20" Foreground="#FFF9F7F7"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Make" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Body Style" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <Slider x:Name="SliderWheelBase"  HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Maximum="121" Minimum="86" StepFrequency="1" Width="320" IsThumbToolTipEnabled="True" Height="40" Margin="0,10,0,0" />
+                <TextBox Text="{Binding ElementName=SliderWheelBase,Path=Value}" Margin="0,-15
+                         ,0,0" FontSize="26"/>
+            </StackPanel>
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Wheel Base" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+            <ComboBox x:Name="CbCylinders" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Width="320" FontSize="20" Foreground="#FFF9F7F7"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Cylinders" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+            <StackPanel Grid.Row="4" Grid.Column="1">
+                <Slider x:Name="SliderEngineSize"  HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Maximum="326" Minimum="61" StepFrequency="25" Width="320" IsThumbToolTipEnabled="True" Height="40"/>
+                <TextBox Text="{Binding ElementName=SliderEngineSize,Path=Value}" Margin="0,-10,0,0" FontSize="26"/>
+            </StackPanel>
+            <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Engine Size" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+            <StackPanel Grid.Row="5" Grid.Column="1">
+                <Slider x:Name="SliderHP" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Maximum="288" Minimum="48" StepFrequency="20" Width="320" IsThumbToolTipEnabled="True" Height="40"/>
+                <TextBox Text="{Binding ElementName=SliderHP,Path=Value}" Margin="0,-10,0,0" FontSize="26"/>
+            </StackPanel>
+            <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Horsepower" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+
+            <StackPanel Grid.Row="6" Grid.Column="1">
+                <Slider x:Name="SliderRPM" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Maximum="6600" Minimum="4150" StepFrequency="800" Width="320" IsThumbToolTipEnabled="True" Height="40"/>
+                <TextBox Text="{Binding ElementName=SliderRPM,Path=Value}" Margin="0,-10,0,0" FontSize="26"/>
+            </StackPanel>
+            <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="RPM (Peak)" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Slider x:Name="SliderMPG" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Maximum="54" Minimum="16" StepFrequency="4" Width="320" IsThumbToolTipEnabled="True" Height="40"/>
+                <TextBox Text="{Binding ElementName=SliderMPG,Path=Value}" Margin="0,-10,0,0" FontSize="26"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="MPG(Highway)" VerticalAlignment="Center" FontSize="36" Foreground="#FF1C1C1C"/>
+
+            <ComboBox x:Name="CbBodyStyle" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF787878" Width="320" FontSize="20" Foreground="#FFF9F7F7"/>
+
+        </Grid>
+
+        <AppBarButton Grid.Row="1" Grid.Column="1" Click="OnPredict" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0" RequestedTheme="Light">
+            <AppBarButton.Icon>
+                <SymbolIcon Symbol="Go" Name="go"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+    </Grid>
+    
+    
+</Page>

@@ -5,13 +5,26 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegressionAzureMLWP", "RegressionAzureMLWP\RegressionAzureMLWP.csproj", "{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RegressionAzureMLWP", "RegressionAzureMLWP", "{3C74FD59-7396-4217-95EC-A365C2CFC1A8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RegressionAzureMLWP.Shared", "RegressionAzureMLWP.Shared\RegressionAzureMLWP.Shared.shproj", "{F0B39CC6-6BED-4D29-985B-0E69A5996235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegressionAzureMLWP.Windows", "RegressionAzureMLWP.Windows\RegressionAzureMLWP.Windows.csproj", "{A8D75977-3A7A-441F-AE61-A9A82D4502BB}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		RegressionAzureMLWP.Shared\RegressionAzureMLWP.Shared.projitems*{e28eda0f-4b5e-428d-81ca-2c9cee46e539}*SharedItemsImports = 4
+		RegressionAzureMLWP.Shared\RegressionAzureMLWP.Shared.projitems*{f0b39cc6-6bed-4d29-985b-0e69a5996235}*SharedItemsImports = 13
+		RegressionAzureMLWP.Shared\RegressionAzureMLWP.Shared.projitems*{a8d75977-3a7a-441f-ae61-a9a82d4502bb}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
 		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
@@ -21,6 +34,7 @@ Global
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|ARM.ActiveCfg = Debug|ARM
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|ARM.Build.0 = Debug|ARM
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|ARM.Deploy.0 = Debug|ARM
+		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|x86.ActiveCfg = Debug|x86
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|x86.Build.0 = Debug|x86
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Debug|x86.Deploy.0 = Debug|x86
@@ -30,11 +44,41 @@ Global
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|ARM.ActiveCfg = Release|ARM
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|ARM.Build.0 = Release|ARM
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|ARM.Deploy.0 = Release|ARM
+		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|x64.ActiveCfg = Release|Any CPU
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|x86.ActiveCfg = Release|x86
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|x86.Build.0 = Release|x86
 		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539}.Release|x86.Deploy.0 = Release|x86
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|ARM.Build.0 = Debug|ARM
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|x64.ActiveCfg = Debug|x64
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|x64.Build.0 = Debug|x64
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|x64.Deploy.0 = Debug|x64
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|x86.ActiveCfg = Debug|x86
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|x86.Build.0 = Debug|x86
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Debug|x86.Deploy.0 = Debug|x86
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|ARM.ActiveCfg = Release|ARM
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|ARM.Build.0 = Release|ARM
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|ARM.Deploy.0 = Release|ARM
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|x64.ActiveCfg = Release|x64
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|x64.Build.0 = Release|x64
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|x64.Deploy.0 = Release|x64
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|x86.ActiveCfg = Release|x86
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|x86.Build.0 = Release|x86
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E28EDA0F-4B5E-428D-81CA-2C9CEE46E539} = {3C74FD59-7396-4217-95EC-A365C2CFC1A8}
+		{F0B39CC6-6BED-4D29-985B-0E69A5996235} = {3C74FD59-7396-4217-95EC-A365C2CFC1A8}
+		{A8D75977-3A7A-441F-AE61-A9A82D4502BB} = {3C74FD59-7396-4217-95EC-A365C2CFC1A8}
 	EndGlobalSection
 EndGlobal
